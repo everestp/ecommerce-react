@@ -1,6 +1,6 @@
 import { createContext, useEffect,useState } from "react";
-import axios from "axios";
-import { fetchItemList } from "../service/ItemService";
+
+import { products } from "../Utils/data";
 
  export const StoreContext = createContext(null)
 
@@ -14,12 +14,8 @@ itemList
 };
 
 useEffect(()=>{
-async function loadData(){
-const data = await fetchItemList()
-setItemList(data)
-console.log(data)
-}
-loadData()
+setItemList(products)
+
 },[])
 
 

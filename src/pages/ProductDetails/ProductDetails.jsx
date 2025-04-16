@@ -1,45 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchFoodDetail } from "../../service/ItemService";
-import { toast } from "react-toastify";
+
+import { products } from "../../Utils/data";
 
 const ProductDetails = () => {
     const { id } = useParams();
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
+
+useEffect(() =>{
+    const index = products.findIndex(item => item.id === id);
+    setData(products[index]);
+    console.log(data)
+},[id])
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    useEffect(() => {
-        const loadItemsDetails = async () => {
-            try {
-                const productData = await fetchFoodDetail(id);
-                setData(productData); // Set the data state with fetched product details
-            } catch (error) {
-                toast.error("Error fetching product details");
-            }
-        };
-
-        loadItemsDetails();
-    }, [id]);
 
     return (
         <div className="container py-5">

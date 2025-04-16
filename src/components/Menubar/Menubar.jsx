@@ -7,8 +7,8 @@ const Menubar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
-  
-      <h1
+  <Link to="/">
+  <h1
   style={{
     fontSize: '1.5rem',
     fontWeight: 'bold',
@@ -20,6 +20,8 @@ const Menubar = () => {
 >
   Carten
 </h1>
+  </Link>
+
 
         <button
           className="navbar-toggler"
@@ -55,8 +57,13 @@ const Menubar = () => {
               <img src={assets.cart} alt="" height={32} width={32} />
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">5</span>
             </div>
+            <Link to="/login" className="nav-link">
             <button className="btn btn-outline-primary">Login</button>
+            </Link>
+            <Link to={"/signup"} className="nav-link">
             <button className="btn btn-outline-success">Register</button>
+
+            </Link>
           </div>
         </div>
       </div>

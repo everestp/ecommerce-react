@@ -11,8 +11,8 @@ const ProductDisplay = ({category,searchText}) => {
     )
 );
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container ">
+      <div className="row ">
         {filteredItems.length > 0 ? (
           filteredItems.map((item,index) => (
            <ProductItem key={index} 
@@ -29,7 +29,7 @@ const ProductDisplay = ({category,searchText}) => {
 
           
         ) : (
-          <div className="text-center mt-4">
+          <div className="text-center mt-4"> 
             <h4>No items available</h4>
           </div>
         )}

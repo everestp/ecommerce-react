@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { useContext } from "react";
+import { StoreContext } from "../../context/StoreContext";
 import { products } from "../../Utils/data";
 
 const ProductDetails = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
-
+const {increaseQty} = useContext(StoreContext)
 useEffect(() =>{
     const index = products.findIndex(item => item.id === id);
     setData(products[index]);
@@ -93,7 +94,7 @@ useEffect(() =>{
 
                     {/* Actions */}
                     <div className="d-grid gap-2">
-                        <button className="btn btn-primary" type="button">
+                        <button className="btn btn-primary" type="button" onClick={()=>increaseQty(id)}>
                             Add to Cart
                         </button>
                         <button className="btn btn-outline-secondary" type="button">

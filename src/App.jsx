@@ -7,6 +7,8 @@ import Explore from './pages/Explore/Explore';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
+import Cart from './pages/Cart/Cart';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const location = useLocation(); // Hook to get the current route path
@@ -18,7 +20,7 @@ function App() {
     <div>
       {/* Show Menubar only if the current path is NOT login or signup */}
       {!hideMenubar && <Menubar />}
-
+<ToastContainer/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<ContactUs />} />
@@ -26,6 +28,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Register />} />
         <Route path='/product/:id' element={<ProductDetails />} />
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
     </div>
   );

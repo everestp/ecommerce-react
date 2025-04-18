@@ -110,11 +110,11 @@ const Cart = () => {
               </div>
               <div className="d-flex justify-content-between mb-3">
                 <span>Shipping</span>
-                <span>Rs {shipping.toFixed(2)}</span>
+                <span style={{color:'blue'}}>Rs +{shipping.toFixed(2)}</span>
               </div>
               <div className="d-flex justify-content-between mb-3">
                 <span>  VAT</span>
-                <span>Rs {vat.toFixed(2)}</span>
+                <span style={{color:'green'}}>Rs + {vat.toFixed(2)}</span>
               </div>
               <hr />
               <div className="d-flex justify-content-between mb-4">

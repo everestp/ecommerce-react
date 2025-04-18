@@ -9,6 +9,7 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Cart from './pages/Cart/Cart';
 import { ToastContainer } from 'react-toastify';
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 
 function App() {
   const location = useLocation(); // Hook to get the current route path
@@ -29,6 +30,7 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/order' element={<PlaceOrder/>}/>
       </Routes>
     </div>
   );

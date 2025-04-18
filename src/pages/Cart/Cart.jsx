@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './Cart.css'
 import { StoreContext } from "../../context/StoreContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
+  const navigate = useNavigate()
      const {itemList,increaseQty,decreaseQty,quantities,removeFromCart}=useContext(StoreContext);
 
      //cart items
@@ -110,18 +111,18 @@ const Cart = () => {
               </div>
               <div className="d-flex justify-content-between mb-3">
                 <span>Shipping</span>
-                <span style={{color:'blue'}}>Rs +{shipping.toFixed(2)}</span>
+                <span>Rs {shipping.toFixed(2)}</span>
               </div>
               <div className="d-flex justify-content-between mb-3">
                 <span>  VAT</span>
-                <span style={{color:'green'}}>Rs + {vat.toFixed(2)}</span>
+                <span>Rs {vat.toFixed(2)}</span>
               </div>
               <hr />
               <div className="d-flex justify-content-between mb-4">
                 <strong>Total</strong>
                 <strong>Rs {total.toFixed(2)}</strong>
               </div>
-              <button className="btn btn-primary w-100">Proceed to Checkout</button>
+              <button onClick={()=>navigate('/order')} className="btn btn-primary w-100">Proceed to Checkout</button>
             </div>
           </div>
           <div className="card mt-4">

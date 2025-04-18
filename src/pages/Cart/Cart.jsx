@@ -73,7 +73,7 @@ const Cart = () => {
                         </div>
                         <div className="col-md-2 text-end">
                           <p className="fw-bold">
-                            Rs {(item.price * item.quantity).toFixed(2)}
+                            Rs {(item.price * quantities[item.id]).toFixed(2)}
                           </p>
                           <button
                             className="btn btn-sm btn-outline-danger"
